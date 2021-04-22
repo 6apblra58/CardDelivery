@@ -190,7 +190,7 @@ public class CardDeliveryTest {
         $("[name='phone']").setValue("1234567890");
         $("[data-test-id=\"agreement\"]").click();
         $(withText("Забронировать")).click();
-        $(withText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));;
+        $(withText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
     }
     @Test
     void shouldWithoutAgreement() {
