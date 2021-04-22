@@ -1,4 +1,4 @@
-import com.codeborne.selenide.Condition;
+
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import java.time.Duration;
@@ -25,8 +25,6 @@ public class CardDeliveryTest {
         $("[data-test-id=\"agreement\"]").click();
         $(withText("Забронировать")).click();
         $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
-        $(byText("Встреча успешно забронирована на"));
-        $(byText(date));
     }
 
     @Test
@@ -175,8 +173,9 @@ public class CardDeliveryTest {
         $("[name='phone']").setValue("+712345678901");
         $("[data-test-id=\"agreement\"]").click();
         $(withText("Забронировать")).click();
-        $(withText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));;
+        $(withText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
     }
+
     @Test
     void shouldTel10Symbols() {
 
